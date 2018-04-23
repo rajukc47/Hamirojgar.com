@@ -94,10 +94,10 @@ require_once("../db.php");
           <div class="col-md-9 bg-white padding-2">
 
             <h3>Overview</h3>
-            <div class="alert alert-info alert-dismissible">
+            <!-- <div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <i class="icon fa fa-info"></i> In this dashboard you are able to change your account settings, post and manage your jobs. Got a question? Do not hesitate to drop us a mail.
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col-md-6">

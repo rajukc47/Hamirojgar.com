@@ -103,7 +103,34 @@ require_once("../db.php");
               <form method="post" action="addpost.php">
                 <div class="col-md-12 latest-job ">
                   <div class="form-group">
-                    <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" placeholder="Job Title">
+                    <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" required placeholder="Job Title">
+                  </div>
+                  <div id="stateDiv" class="form-group">
+                <select class="form-control  input-lg" id="jobcategory" name="jobcategory" required>
+                  <option value="" selected="">Select Job Category</option>
+                  <option value="1">Technical</option>
+                  <option value="2">Non-Technical</option>
+                </select>
+              </div>
+                  <div id="stateDiv" class="form-group">
+                    <select class="form-control  input-lg" id="joblevel" name="joblevel" required>
+                      <option value="" selected="">Select Job Level</option>
+                      <option value="1">Top Level</option>
+                      <option value="2" >Senior Level</option>
+                      <option value="3">Mid Level</option>
+                      <option value="4">Entry Level</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control input-lg" type="number" id="jobnum" name="jobnum" placeholder="No of Vacancies">
+                  </div>
+                  <div id="stateDiv" class="form-group">
+                    <select class="form-control  input-lg" id="jobtype" name="jobtype" required>
+                      <option value="" selected="">Select Job Type</option>
+                      <option value="1">Full Time</option>
+                      <option value="2" >Part Time</option>
+                      <option value="3">Contract</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <textarea class="form-control input-lg" id="description" name="description" placeholder="Job Description"></textarea>
@@ -120,6 +147,9 @@ require_once("../db.php");
                   <div class="form-group">
                     <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required="">
                   </div>
+                   <div class="form-group">
+                <input class="form-control input-lg" type="date" id="closingdate"  name="closingdate" placeholder="Closing Date">
+              </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-flat btn-success">Create</button>
                   </div>

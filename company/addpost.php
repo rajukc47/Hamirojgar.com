@@ -18,16 +18,21 @@ if(isset($_POST)) {
 
 
 
-	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, description, minimumsalary, maximumsalary, experience, qualification) VALUES (?,?, ?, ?, ?, ?, ?)");
+	$stmt = $conn->prepare("INSERT INTO job_post(id_company, jobtitle, jobcategory, joblevel, jobnum, jobtype, description, minimumsalary, maximumsalary, experience, qualification,closingdate) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-	$stmt->bind_param("issssss", $_SESSION['id_company'], $jobtitle, $description, $minimumsalary, $maximumsalary, $experience, $qualification);
+	$stmt->bind_param("isssssssssss", $_SESSION['id_company'], $jobtitle, $jobcategory, $joblevel, $jobnum, $jobtype, $description, $minimumsalary, $maximumsalary, $experience, $qualification, $closingdate);
 
 	$jobtitle = mysqli_real_escape_string($conn, $_POST['jobtitle']);
+	$jobcategory = mysqli_real_escape_string($conn, $_POST['jobcategory']);
+	$joblevel = mysqli_real_escape_string($conn, $_POST['joblevel']);
+	$jobnum = mysqli_real_escape_string($conn, $_POST['jobnum']);
+	$jobtype = mysqli_real_escape_string($conn, $_POST['jobtype']);
 	$description = mysqli_real_escape_string($conn, $_POST['description']);
 	$minimumsalary = mysqli_real_escape_string($conn, $_POST['minimumsalary']);
 	$maximumsalary = mysqli_real_escape_string($conn, $_POST['maximumsalary']);
 	$experience = mysqli_real_escape_string($conn, $_POST['experience']);
 	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
+	$closingdate = mysqli_real_escape_string($conn, $_POST['closingdate']);
 
 
 	if($stmt->execute()) {
