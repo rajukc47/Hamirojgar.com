@@ -42,59 +42,7 @@ require_once("db.php");
 
   <header class="main-header">
 
-    <!-- Logo -->
-    <a href="index.php" class="logo logo-bg">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>J</b>P</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
-    </a>
-
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="jobs.php">Jobs</a>
-          </li>
-          <li>
-            <a href="#candidates">Candidates</a>
-          </li>
-          <li>
-            <a href="#company">Company</a>
-          </li>
-          <li>
-            <a href="#about">About Us</a>
-          </li>
-          <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
-          <li>
-            <a href="login.php">Login</a>
-          </li>
-          <li>
-            <a href="sign-up.php">Sign Up</a>
-          </li>  
-          <?php } else { 
-
-            if(isset($_SESSION['id_user'])) { 
-          ?>        
-          <li>
-            <a href="user/index.php">Dashboard</a>
-          </li>
-          <?php
-          } else if(isset($_SESSION['id_company'])) { 
-          ?>        
-          <li>
-            <a href="company/index.php">Dashboard</a>
-          </li>
-          <?php } ?>
-          <li>
-            <a href="logout.php">Logout</a>
-          </li>
-          <?php } ?>
-        </ul>
-      </div>
-    </nav>
+      <?php include("inc/header.php"); ?> 
   </header>
 
   <!-- Content Wrapper. Contains page content -->
@@ -150,80 +98,6 @@ require_once("db.php");
           }
           ?>
 
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="candidates" class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>Candidates</h1>
-            <p>Finding a job just got easier. Create a profile and apply with single mouse click.</p>            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail candidate-img">
-              <img src="img/browse.jpg" alt="Browse Jobs">
-              <div class="caption">
-                <h3 class="text-center">Browse Jobs</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail candidate-img">
-              <img src="img/interviewed.jpeg" alt="Apply & Get Interviewed">
-              <div class="caption">
-                <h3 class="text-center">Apply & Get Interviewed</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail candidate-img">
-              <img src="img/career.jpg" alt="Start A Career">
-              <div class="caption">
-                <h3 class="text-center">Start A Career</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="company" class="content-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>Companies</h1>
-            <p>Hiring? Register your company for free, browse our talented pool, post and track job applications</p>            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail company-img">
-              <img src="img/postjob.png" alt="Browse Jobs">
-              <div class="caption">
-                <h3 class="text-center">Post A Job</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail company-img">
-              <img src="img/manage.jpg" alt="Apply & Get Interviewed">
-              <div class="caption">
-                <h3 class="text-center">Manage & Track</h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="thumbnail company-img">
-              <img src="img/hire.png" alt="Start A Career">
-              <div class="caption">
-                <h3 class="text-center">Hire</h3>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -333,7 +207,83 @@ require_once("db.php");
       </div>
     </section>
 
-    <section id="about" class="content-header">
+    <section id="candidates" class="content-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center latest-job margin-bottom-20">
+            <h1>Candidates</h1>
+            <p>Finding a job just got easier. Create a profile and apply with single mouse click.</p>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail candidate-img">
+              <img src="img/browse.jpg" alt="Browse Jobs">
+              <div class="caption">
+                <h3 class="text-center">Browse Jobs</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail candidate-img">
+              <img src="img/interviewed.jpeg" alt="Apply & Get Interviewed">
+              <div class="caption">
+                <h3 class="text-center">Apply & Get Interviewed</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail candidate-img">
+              <img src="img/career.jpg" alt="Start A Career">
+              <div class="caption">
+                <h3 class="text-center">Start A Career</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="content-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center latest-job margin-bottom-20">
+            <h1>Companies</h1>
+            <p>Hiring? Register your company for free, browse our talented pool, post and track job applications</p>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail company-img">
+              <img src="img/postjob.png" alt="Browse Jobs">
+              <div class="caption">
+                <h3 class="text-center">Post A Job</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail company-img">
+              <img src="img/manage.jpg" alt="Apply & Get Interviewed">
+              <div class="caption">
+                <h3 class="text-center">Manage & Track</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="thumbnail company-img">
+              <img src="img/hire.png" alt="Start A Career">
+              <div class="caption">
+                <h3 class="text-center">Hire</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- <section id="about" class="content-header">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center latest-job margin-bottom-20">
@@ -355,16 +305,13 @@ require_once("db.php");
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
   </div>
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="learningfromscratch.online">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+    <?php include("inc/footer.php"); ?>
   </footer>
 
   <!-- /.control-sidebar -->
