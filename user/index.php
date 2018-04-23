@@ -46,25 +46,8 @@ require_once("../db.php");
 
   <header class="main-header">
 
-    <!-- Logo -->
-    <a href="index.php" class="logo logo-bg">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>J</b>P</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
-    </a>
+    <?php include("inc/header.php");?>
 
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="../jobs.php">Jobs</a>
-          </li>          
-        </ul>
-      </div>
-    </nav>
   </header>
 
   <!-- Content Wrapper. Contains page content -->
@@ -136,10 +119,7 @@ require_once("../db.php");
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="learningfromscratch.online">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+    <?php include("inc/footer.php");?>
   </footer>
 
   <!-- /.control-sidebar -->

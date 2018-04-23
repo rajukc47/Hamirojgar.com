@@ -11,18 +11,6 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <li>
-            <a href="jobs.php">Jobs</a>
-          </li>
-          <li>
-            <a href="#candidates">Candidates</a>
-          </li>
-          <li>
-            <a href="#company">Company</a>
-          </li>
-          <!-- <li>
-            <a href="#about">About Us</a>
-          </li> -->
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
             <a href="login.php">Login</a>
@@ -47,7 +35,7 @@
           <li>
             <a href="logout.php">Logout</a>
           </li>
-          <?php } ?>
+          <?php } ?>          
         </ul>
       </div>
     </nav>
