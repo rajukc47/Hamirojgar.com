@@ -100,8 +100,6 @@ require_once("../db.php");
                       <th>Email</th>
                       <th>Phone</th>
                       <th>City</th>
-                      <th>State</th>
-                      <th>Country</th>
                       <th>Status</th>
                       <th>Delete</th>
                     </thead>
@@ -118,8 +116,6 @@ require_once("../db.php");
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['contactno']; ?></td>
                         <td><?php echo $row['city']; ?></td>
-                        <td><?php echo $row['state']; ?></td>
-                        <td><?php echo $row['country']; ?></td>
                         <td>
                         <?php
                           if($row['active'] == '1') {

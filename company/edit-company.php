@@ -130,13 +130,28 @@ require_once("../db.php");
                     <input type="text" class="form-control input-lg" id="contactno" name="contactno" placeholder="Contact Number" value="<?php echo $row['contactno']; ?>">
                   </div>
                   <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control input-lg" id="city" name="city" value="<?php echo $row['city']; ?>" placeholder="city">
-                  </div>
-                  <div class="form-group">
+                <select class="form-control  input-lg" id="city" name="city" required>
+                <option value="">Select City</option>
+                <?php
+                  $sql="SELECT * FROM cities";
+                  $result=$conn->query($sql);
+
+                  if($result->num_rows > 0) {
+                    while($r = $result->fetch_assoc()) {
+                ?>
+                <option value="<?php echo $r['name'];?>" <?php echo $r['name']==$row['city']?'selected':'';?>><?php echo $r['name'];?></option>
+                 
+                 <?php
+                    }
+                  }
+                ?>
+                  
+                </select>
+              </div>  
+                  <!-- <div class="form-group">
                     <label for="state">State</label>
                     <input type="text" class="form-control input-lg" id="state" name="state" placeholder="state" value="<?php echo $row['state']; ?>">
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <label>Change Company Logo</label>
                     <input type="file" name="image" class="btn btn-default">

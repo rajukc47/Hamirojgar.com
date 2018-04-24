@@ -70,7 +70,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
               if(isset($_SESSION['registerCompleted'])) {
                 ?>
                 <div>
-                  <p class="text-center">You Have Registered Successfully! Your Account Approval Is Pending By Admin</p>
+                  <p class="text-center text-green">You Have Registered Successfully! Your Account Approval Is Pending By Admin</p>
                 </div>
               <?php
                unset($_SESSION['registerCompleted']); }

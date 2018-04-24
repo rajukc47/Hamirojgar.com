@@ -16,8 +16,8 @@ if(isset($_POST)) {
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	$password = mysqli_real_escape_string($conn, $_POST['password']);
 
-	$country = mysqli_real_escape_string($conn, $_POST['country']);
-	$state = mysqli_real_escape_string($conn, $_POST['state']);
+	//$country = mysqli_real_escape_string($conn, $_POST['country']);
+	//$state = mysqli_real_escape_string($conn, $_POST['state']);
 	$city = mysqli_real_escape_string($conn, $_POST['city']);
 
 	$aboutme = mysqli_real_escape_string($conn, $_POST['aboutme']);
@@ -86,7 +86,7 @@ if(isset($_POST)) {
 		}
 
 		//sql new registration insert query
-		$sql = "INSERT INTO company(name, companyname, country, state, city, contactno, website, email, password, aboutme, logo) VALUES ('$name', '$companyname', '$country', '$state', '$city', '$contactno', '$website', '$email', '$password', '$aboutme', '$file')";
+		$sql = "INSERT INTO company(name, companyname, city, contactno, website, email, password, aboutme, logo) VALUES ('$name', '$companyname', '$city', '$contactno', '$website', '$email', '$password', '$aboutme', '$file')";
 
 		if($conn->query($sql)===TRUE) {
 

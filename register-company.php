@@ -109,10 +109,10 @@ require_once("db.php");
                 <input class="form-control input-lg" type="text" name="contactno" placeholder="Phone Number" minlength="10" maxlength="10" autocomplete="off" onkeypress="return validatePhone(event);" required>
               </div>
               <div class="form-group">
-                <select class="form-control  input-lg" id="country" name="country" required>
-                <option selected="" value="">Select Country</option>
+                <select class="form-control  input-lg" id="city" name="city" required>
+                <option selected="" value="">Select City</option>
                 <?php
-                  $sql="SELECT * FROM countries";
+                  $sql="SELECT * FROM cities";
                   $result=$conn->query($sql);
 
                   if($result->num_rows > 0) {
@@ -124,16 +124,16 @@ require_once("db.php");
                   
                 </select>
               </div>  
-              <div id="stateDiv" class="form-group" style="display: none;">
+              <!-- <div id="stateDiv" class="form-group" >
                 <select class="form-control  input-lg" id="state" name="state" required>
                   <option value="" selected="">Select State</option>
                 </select>
               </div>   
-              <div id="cityDiv" class="form-group" style="display: none;">
+              <div id="cityDiv" class="form-group">
                 <select class="form-control  input-lg" id="city" name="city" required>
                   <option selected="">Select City</option>
-                </select>
-              </div>
+                </select> 
+              </div>-->
               <div class="form-group">
                 <label>Attach Company Logo</label>
                 <input type="file" name="image" class="form-control input-lg" required>
@@ -189,7 +189,7 @@ require_once("db.php");
   }
 </script>
 
-<script>
+<!-- <script>
   $("#country").on("change", function() {
     var id = $(this).find(':selected').attr("data-id");
     $("#state").find('option:not(:first)').remove();
@@ -203,9 +203,9 @@ require_once("db.php");
       $('#cityDiv').hide();
     }
   });
-</script>
+</script> -->
 
-<script>
+<!-- <script>
   $("#state").on("change", function() {
     var id = $(this).find(':selected').attr("data-id");
     $("#city").find('option:not(:first)').remove();
@@ -218,7 +218,7 @@ require_once("db.php");
       $('#cityDiv').hide();
     }
   });
-</script>
+</script> -->
 <script>
   $("#registerCompanies").on("submit", function(e) {
     e.preventDefault();

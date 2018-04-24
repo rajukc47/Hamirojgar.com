@@ -77,8 +77,23 @@ require_once("db.php");
                   <li class="treeview menu-open">
                     <a href="#"><i class="fa fa-plane text-red"></i> City <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
                     <ul class="treeview-menu">
-                      <li><a href=""  class="citySearch" data-target="Delhi"><i class="fa fa-circle-o text-yellow"></i> Delhi</a></li>
-                      <li><a href="" class="citySearch" data-target="Kouba"><i class="fa fa-circle-o text-yellow"></i> Kouba</a></li>
+
+                      <?php
+                  $sql="SELECT * FROM cities";
+                  $result=$conn->query($sql);
+
+                  if($result->num_rows > 0) {
+                    while($r = $result->fetch_assoc()) {
+                      ?>
+
+                    <li><a href=""  class="citySearch" data-target="<?php echo $r['name'];?>">
+                      <i class="fa fa-circle-o text-yellow"></i> <?php echo $r['name'];?></a></li>
+
+                    <?php
+                      
+                    }
+                  }
+                ?>
                     </ul>
                   </li>
                   <li class="treeview menu-open">
