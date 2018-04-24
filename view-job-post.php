@@ -71,8 +71,43 @@ require_once("db.php");
             <div class="clearfix"></div>
             <hr>
             <div>
-              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> Closing Date : <?php echo date("d-M-Y", strtotime($row['closingdate'])); ?></p>              
             </div>
+            
+                   <table class="table">
+    
+                      <tbody>
+                        <tr>
+                          <td><strong>Job Category : </strong></td>
+                          <td><?php echo $row['jobcategory'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Job Level : </strong></td>
+                          <td><?php echo $row['joblevel'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>No. of Vacancies : </strong></td>
+                          <td><?php echo $row['jobnum'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Job Type : </strong></td>
+                          <td><?php echo $row['jobtype'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Offered Salary : </strong></td>
+                          <td><?php echo 'NRs '.$row['minimumsalary']."- NRs".$row['maximumsalary']." /Month";?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Experienced Required : </strong></td>
+                          <td><?php echo $row['experience']." Years";?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Min. Education Qualification : </strong></td>
+                          <td><?php echo $row['qualification'];?></td>
+                        </tr>
+                      </tbody>
+                      </table>
+           
             <div>
               <?php echo stripcslashes($row['description']); ?>
             </div>
@@ -92,11 +127,11 @@ require_once("db.php");
                 <h3><?php echo $row['companyname']; ?></h3>
                 <p><a href="#" class="btn btn-primary btn-flat" role="button">More Info</a>
                 <hr>
-                <div class="row">
+                <!--<div class="row">
                   <div class="col-md-4"><a href=""><i class="fa fa-address-card-o"></i> Apply</a></div>
-                  <div class="col-md-4"><a href=""><i class="fa fa-warning"></i> Report</a></div>
-                  <div class="col-md-4"><a href=""><i class="fa fa-envelope"></i> Email</a></div>
-                </div>
+                   <div class="col-md-4"><a href=""><i class="fa fa-warning"></i> Report</a></div>
+                  <div class="col-md-4"><a href=""><i class="fa fa-envelope"></i> Email</a></div> 
+                </div>-->
               </div>
             </div>
           </div>

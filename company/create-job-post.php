@@ -148,7 +148,7 @@ require_once("../db.php");
                     <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required="">
                   </div>
                    <div class="form-group">
-                <input class="form-control input-lg" type="date" id="closingdate"  name="closingdate" placeholder="Closing Date">
+                <input class="form-control input-lg" type="date" id="closingdate"  name="closingdate" title="Closing Date">
               </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-flat btn-success">Create</button>
