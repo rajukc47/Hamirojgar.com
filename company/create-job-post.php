@@ -106,11 +106,7 @@ require_once("../db.php");
                     <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" required placeholder="Job Title">
                   </div>
                   <div id="stateDiv" class="form-group">
-                <select class="form-control  input-lg" id="jobcategory" name="jobcategory" required>
-                  <option value="" selected="">Select Job Category</option>
-                  <option value="1">Technical</option>
-                  <option value="2">Non-Technical</option>
-                </select>
+                <input class="form-control input-lg" type="text" id="jobcategory" name="jobcategory" required placeholder="Job Category">
               </div>
                   <div id="stateDiv" class="form-group">
                     <select class="form-control  input-lg" id="joblevel" name="joblevel" required>

@@ -83,7 +83,13 @@ require_once("db.php");
                         </tr>
                         <tr>
                           <td><strong>Job Level : </strong></td>
-                          <td><?php echo $row['joblevel'];?></td>
+                          <td><?php   if($row['joblevel']=='1') echo "Top Level";
+                                      if($row['joblevel']=='2') echo "Senior Level";
+                                      if($row['joblevel']=='3') echo "Mid Level";
+                                      if($row['joblevel']=='4')echo "Entry Level";
+                              ?>
+                            
+                          </td>
                         </tr>
                         <tr>
                           <td><strong>No. of Vacancies : </strong></td>
@@ -91,7 +97,13 @@ require_once("db.php");
                         </tr>
                         <tr>
                           <td><strong>Job Type : </strong></td>
-                          <td><?php echo $row['jobtype'];?></td>
+                          <td><?php echo $row['jobtype'];?>
+                            
+                            <?php     if($row['jobtype']=='1') echo "Full Time";
+                                      if($row['jobtype']=='2') echo "Part Time";
+                                      if($row['jobtype']=='3') echo "Contract";
+                              ?>
+                          </td>
                         </tr>
                         <tr>
                           <td><strong>Offered Salary : </strong></td>
@@ -116,9 +128,13 @@ require_once("db.php");
             <div>
               <a href="apply.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-success btn-flat margin-top-50">Apply</a>
             </div>
+            <?php } 
+                  else{
+            ?>
+            <div>
+              <a href="login-candidates.php" class="btn btn-success btn-flat margin-top-50">Login to Apply</a>
+            </div>
             <?php } ?>
-            
-            
           </div>
           <div class="col-md-3">
             <div class="thumbnail">

@@ -123,17 +123,70 @@ if($result->num_rows == 0)
                   <a href="job-applications.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
                 </div>
                 <div class="clearfix"></div>
-                <hr>
                 <div>
+                  <hr>
+                  <strong>Brief Introduction</strong>
+                  <br>
+                  <?php echo $row['aboutme'];?>
+
+                   <table class="table">
+    
+                      <tbody>
+                        <tr>
+                          <td><strong>Email : </strong></td>
+                          <td><?php echo $row['email']; ?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>DOB : </strong></td>
+                          <td><?php echo $row['dob'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Contact Number : </strong></td>
+                          <td><?php echo $row['contactno'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Address : </strong></td>
+                          <td><?php echo $row['address'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>City : </strong></td>
+                          <td><?php echo $row['city'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>State : </strong></td>
+                          <td><?php echo $row['state']." Years";?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Highest Qualification : </strong></td>
+                          <td><?php echo $row['qualification'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Passed Year : </strong></td>
+                          <td><?php echo $row['passingyear'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Stream : </strong></td>
+                          <td><?php echo $row['stream'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Passed Year : </strong></td>
+                          <td><?php echo $row['passingyear'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Skills : </strong></td>
+                          <td><?php echo $row['skills'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>designation : </strong></td>
+                          <td><?php echo $row['designation'];?></td>
+                        </tr>
+                      </tbody>
+                      </table>
                   <?php
-                    echo 'Email: '.$row['email'];
-                    echo '<br>';
-                    echo 'City: '.$row['city'];
-                    echo '<br>';
+                    
                     if($row['resume'] != "") {
                       echo '<a href="../uploads/resume/'.$row['resume'].'" class="btn btn-info" download="Resume">Download Resume</a>';
                     }
-                    echo '<br>';
                     echo '<br>';
                     echo '<br>';
                     echo '<br>';
