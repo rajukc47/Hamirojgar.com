@@ -98,6 +98,7 @@ require_once("../db.php");
                       <th>Job Name</th>
                       <th>Company Name</th>
                       <th>Date Created</th>
+                      <th>Closing Date</th>
                       <th>View</th>
                       <th>Delete</th>
                     </thead>
@@ -113,6 +114,7 @@ require_once("../db.php");
                         <td><?php echo $row['jobtitle']; ?></td>
                         <td><?php echo $row['companyname']; ?></td>
                         <td><?php echo date("d-M-Y", strtotime($row['createdat'])); ?></td>
+                        <td><?php echo $row['closingdate']; ?></td>
                         <td><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><i class="fa fa-address-card-o"></i></a></td>
                         <td><a href="delete-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><i class="fa fa-trash"></i></a></td>
                       </tr>  

@@ -67,7 +67,7 @@ if(isset($_SESSION['id_admin'])) {
 if(isset($_SESSION['loginError'])) {
   ?>
   <div>
-    <p class="text-center">Invalid Email/Password! Try Again!</p>
+    <p class="text-center text-red">Invalid Email/Password! Try Again!</p>
   </div>
 <?php
  unset($_SESSION['loginError']); }

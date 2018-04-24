@@ -92,8 +92,54 @@ if($result1->num_rows > 0)
             <div class="clearfix"></div>
             <hr>
             <div>
-              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> Created Date : <?php echo date("d-M-Y", strtotime($row['createdat'])); ?>
+              <i class="fa fa-calendar text-green"></i> Closing Date : <?php echo date("d-M-Y", strtotime($row['closingdate'])); ?></p>              
             </div>
+            <table class="table">
+    
+                      <tbody>
+                        <tr>
+                          <td><strong>Job Category : </strong></td>
+                          <td><?php echo $row['jobcategory'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Job Level : </strong></td>
+                          <td><?php   if($row['joblevel']=='1') echo "Top Level";
+                                      if($row['joblevel']=='2') echo "Senior Level";
+                                      if($row['joblevel']=='3') echo "Mid Level";
+                                      if($row['joblevel']=='4')echo "Entry Level";
+                              ?>
+                            
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>No. of Vacancies : </strong></td>
+                          <td><?php echo $row['jobnum'];?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Job Type : </strong></td>
+                          <td><?php echo $row['jobtype'];?>
+                            
+                            <?php     if($row['jobtype']=='1') echo "Full Time";
+                                      if($row['jobtype']=='2') echo "Part Time";
+                                      if($row['jobtype']=='3') echo "Contract";
+                              ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Offered Salary : </strong></td>
+                          <td><?php echo 'NRs '.$row['minimumsalary']."- NRs".$row['maximumsalary']." /Month";?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Experienced Required : </strong></td>
+                          <td><?php echo $row['experience']." Years";?></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Min. Education Qualification : </strong></td>
+                          <td><?php echo $row['qualification'];?></td>
+                        </tr>
+                      </tbody>
+                      </table>
             <div>
               <?php echo stripcslashes($row['description']); ?>
             </div>
