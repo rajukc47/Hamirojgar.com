@@ -101,6 +101,7 @@ require_once("../db.php");
                       <th>City</th>
                       <th>State</th>
                       <th>Download Resume</th>
+                      <th>Delete</th>
                     </thead>
                     <tbody>
                       <?php
@@ -131,6 +132,7 @@ require_once("../db.php");
                         <?php } else { ?>
                         <td>No Resume Uploaded</td>
                         <?php } ?>
+                        <td><a href="delete-application.php?id=<?php echo $row['id_user']; ?>">Delete</a></td>
                       </tr>
 
                       <?php

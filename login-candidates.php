@@ -73,7 +73,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     if(isset($_SESSION['registerCompleted'])) {
       ?>
       <div>
-        <p id="successMessage" class="text-center text-success">Check your email!</p>
+        <p id="successMessage" class="text-center text-success">Registration Completed Successfully !</p>
       </div>
     <?php
      unset($_SESSION['registerCompleted']); }

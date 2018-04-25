@@ -86,7 +86,7 @@ require_once("../db.php");
                   <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
                   <li class="active"><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
                   <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
-                </ul>e-o-right"></i> Logout</a></li>
+                </ul>
                 </ul>
               </div>
             </div>
